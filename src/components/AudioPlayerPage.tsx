@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { AudioPlayer } from "./AudioPlayer";
+import "./css/styles.css"; // Importer le fichier CSS
 
 const AudioPlayerPage: React.FC = () => {
   // Récupérer les paramètres depuis l'URL
@@ -10,10 +11,10 @@ const AudioPlayerPage: React.FC = () => {
   }>();
 
   // Construire le chemin de l'audio en fonction du nom et de la langue
-  const audioSrc = `https://abenkirane889.github.io/childrenStoryBook/audios/${audioName}/${language}/${audioName}_${language}.m4a`;
+  const audioSrc = `/audios/${audioName}/${language}/${audioName}_${language}.m4a`;
 
   // Construire le chemin de l'image (pas de langue dans ce cas)
-  const imageSrc = `https://abenkirane889.github.io/childrenStoryBook/images/${audioName}/couverture_${audioName}.png`;
+  const imageSrc = `/images/${audioName}/couverture_${audioName}.png`;
 
   return (
     <div className="audio-page-container">
@@ -21,7 +22,8 @@ const AudioPlayerPage: React.FC = () => {
         <AudioPlayer
           src={audioSrc}
           minimal={false}
-          width={350}
+          // eslint-disable-next-line prettier/prettier
+          width={350} // S'adapte à la largeur de l'écran
           trackHeight={75}
           barWidth={1}
           gap={1}
@@ -36,7 +38,11 @@ const AudioPlayerPage: React.FC = () => {
         />
       </div>
       <div className="image-container">
-        <img src={imageSrc} alt={`Couverture de ${audioName}`} />
+        <img
+          src={imageSrc}
+          alt={`Couverture de ${audioName}`}
+          className="audio-image" // Classe CSS pour le responsive
+        />
       </div>
     </div>
   );

@@ -8,4 +8,5 @@ export default defineConfig({
     copyPublicDir: true,
     outDir: "dist", // Assure-toi que le dossier de sortie est "dist"
   },
+  publicDir: "docs", // Dossier qui contient les fichiers statiques (audios, images, etc.)
 });

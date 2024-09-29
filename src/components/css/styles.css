@@ -1,12 +1,15 @@
-body,
-html {
+/* Style de base pour desktop */
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   background-color: #4b0000; /* Fond rouge foncé */
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
 }
 
 .audio-page-container {
@@ -14,8 +17,10 @@ html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1200px; /* Limite la largeur maximale */
   height: 100vh;
   padding: 0 50px;
+  box-sizing: border-box;
 }
 
 .audio-player-container {
@@ -33,7 +38,58 @@ html {
 }
 
 .image-container img {
-  max-height: 80%; /* Pour garder l'image proportionnée et centrée */
+  max-height: 80%; /* Garde l'image proportionnée */
   max-width: 100%;
   object-fit: contain; /* Ajuste l'image pour qu'elle ne soit pas déformée */
+}
+
+/* Responsive pour tablettes (768px et moins) */
+@media (max-width: 768px) {
+  .audio-page-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .audio-player-container,
+  .image-container {
+    width: 100%; /* Prend toute la largeur */
+    margin-bottom: 20px; /* Ajoute un espace entre les éléments */
+  }
+
+  .image-container img {
+    max-width: 80%; /* Réduit un peu l'image pour les tablettes */
+    max-height: 60%;
+  }
+}
+
+/* Responsive pour téléphones (480px et moins) */
+@media (max-width: 480px) {
+  html,
+  body {
+    padding: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .audio-page-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    height: auto; /* Autorise le scroll si nécessaire */
+  }
+
+  .audio-player-container,
+  .image-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .image-container img {
+    max-width: 90%; /* Réduit encore l'image pour les petits écrans */
+    max-height: 50%;
+  }
 }

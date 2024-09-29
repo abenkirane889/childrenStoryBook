@@ -9,10 +9,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <Router>
       <Routes>
         {/* Route avec les paramètres : audioName et language */}
-        <Route
-          path="/audio/:audioName/:language"
-          element={<AudioPlayerPage />}
-        />
+        <Route path="/:audioName/:language" element={<AudioPlayerPage />} />
       </Routes>
     </Router>
   </React.StrictMode>
