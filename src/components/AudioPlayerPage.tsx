@@ -10,10 +10,10 @@ const AudioPlayerPage: React.FC = () => {
   }>();
 
   // Construire le chemin de l'audio en fonction du nom et de la langue
-  const audioSrc = `https://abenkirane889.github.io/childrenStoryBook/audios/${audioName}_${language}.m4a`;
+  const audioSrc = `https://abenkirane889.github.io/childrenStoryBook/audios/${audioName}/${language}/${audioName}_${language}.m4a`;
 
   // Construire le chemin de l'image (pas de langue dans ce cas)
-  const imageSrc = `https://abenkirane889.github.io/childrenStoryBook/images/couverture_${audioName}.png`;
+  const imageSrc = `https://abenkirane889.github.io/childrenStoryBook/images/${audioName}/couverture_${audioName}.png`;
 
   return (
     <div className="audio-page-container">
