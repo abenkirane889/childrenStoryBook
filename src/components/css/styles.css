@@ -1,0 +1,39 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #4b0000; /* Fond rouge foncé */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 50px;
+}
+
+.audio-player-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+.image-container img {
+  max-height: 80%; /* Pour garder l'image proportionnée et centrée */
+  max-width: 100%;
+  object-fit: contain; /* Ajuste l'image pour qu'elle ne soit pas déformée */
+}
