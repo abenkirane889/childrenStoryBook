@@ -11,10 +11,10 @@ const AudioPlayerPage: React.FC = () => {
   }>();
 
   // Construire le chemin de l'audio en fonction du nom et de la langue
-  const audioSrc = `/audios/${audioName}/${language}/${audioName}_${language}.m4a`;
+  const audioSrc = `/audios/${audioName}/${language}/${audioName}_${language}.mp3`;
 
   // Construire le chemin de l'image (pas de langue dans ce cas)
-  const imageSrc = `/images/${audioName}/couverture_${audioName}.png`;
+  const imageSrc = `/images/${audioName}/${language}/couverture_${audioName}_${language}.png`;
 
   return (
     <div className="audio-page-container">
@@ -23,7 +23,7 @@ const AudioPlayerPage: React.FC = () => {
           src={audioSrc}
           minimal={false}
           // eslint-disable-next-line prettier/prettier
-          width={350} // S'adapte à la largeur de l'écran
+          width={350}
           trackHeight={75}
           barWidth={1}
           gap={1}
